@@ -1,18 +1,72 @@
 import { Component } from "react";
 
 import FantasyBooks from "../books/fantasy.json";
+import HistoryBooks from "../books/history.json";
+import HorrorBooks from "../books/horror.json";
+import RomanceBooks from "../books/romance.json";
+import ScifiBooks from "../books/scifi.json";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ListGroup from "react-bootstrap/ListGroup";
+import Button from "react-bootstrap/Button";
 
 class AllTheBooks extends Component {
+  state = {
+    selectedCategory: FantasyBooks,
+  };
+
   render() {
+    const changeCategory = (categoryOfBooks) => {
+      this.setState({
+        selectedCategory: categoryOfBooks,
+      });
+    };
+
     return (
       <Container>
+        <Row>
+          <Col className="d-flex gap-3 justify-content-center">
+            <Button
+              onClick={() => {
+                changeCategory(FantasyBooks);
+              }}
+            >
+              Fantasy
+            </Button>
+            <Button
+              onClick={() => {
+                changeCategory(HistoryBooks);
+              }}
+            >
+              History
+            </Button>
+            <Button
+              onClick={() => {
+                changeCategory(HorrorBooks);
+              }}
+            >
+              Horror
+            </Button>
+            <Button
+              onClick={() => {
+                changeCategory(RomanceBooks);
+              }}
+            >
+              Romance
+            </Button>
+            <Button
+              onClick={() => {
+                changeCategory(ScifiBooks);
+              }}
+            >
+              Sci-Fi
+            </Button>
+          </Col>
+        </Row>
         <Row className="g-2" xs={2} md={6} lg={8}>
-          {FantasyBooks.map((book) => {
+          {this.state.selectedCategory.map((book) => {
             return (
               <Col key={book.asin}>
                 <Card className="h-100 d-flex justify-content-between ">
@@ -43,7 +97,3 @@ class AllTheBooks extends Component {
 }
 
 export default AllTheBooks;
-
-// const capitalized =
-//   word.charAt(0).toUpperCase()
-//   + word.slice(1)
