@@ -11,7 +11,7 @@ class Welcome extends Component {
         <Row className="text-center">
           <Col>
             <Alert variant="success">
-              <Alert.Heading>Welcome</Alert.Heading>
+              <Alert.Heading className="fw-bold">Welcome</Alert.Heading>
               <p>
                 Hi, this is your next favourite online-library. You can shop any
                 book you wany for the best prices available.

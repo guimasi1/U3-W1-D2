@@ -65,7 +65,7 @@ class AllTheBooks extends Component {
             </Button>
           </Col>
         </Row>
-        <Row className="g-2" xs={2} md={6} lg={8}>
+        <Row className="g-2 mt-3" xs={2} md={6} lg={8}>
           {this.state.selectedCategory.map((book) => {
             return (
               <Col key={book.asin}>
@@ -76,7 +76,9 @@ class AllTheBooks extends Component {
                       variant="top"
                       src={book.img}
                     />
-                    <Card.Title className="fs-6">{book.title}</Card.Title>
+                    <Card.Title className="fs-6 px-2 text-center pt-1">
+                      {book.title}
+                    </Card.Title>
                   </div>
 
                   <ListGroup className="list-group-flush">
