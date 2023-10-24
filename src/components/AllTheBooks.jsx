@@ -77,7 +77,7 @@ class AllTheBooks extends Component {
                       variant="top"
                       src={book.img}
                     />
-                    <Card.Title className="fs-6 px-2 text-center pt-1">
+                    <Card.Title className="fs-6 px-2 text-center pt-1 text-nowrap text-truncate">
                       {book.title}
                     </Card.Title>
                   </div>
