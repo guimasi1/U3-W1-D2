@@ -72,6 +72,7 @@ class AllTheBooks extends Component {
                 <Card className="h-100 d-flex justify-content-between ">
                   <div>
                     <Card.Img
+                      className="h-75"
                       style={{ height: "150px" }}
                       variant="top"
                       src={book.img}
